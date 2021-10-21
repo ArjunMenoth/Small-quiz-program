@@ -1,0 +1,101 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Questions
+{
+	string q1 = "\nQ1. What is the biggest Animal in the world?";
+	string q2 = "Q2. What is the biggest country in the world?";
+	string q3 = "Q3. What is the largest planet?";
+};
+
+struct WrongAnswers
+{
+	string qw11 = "Dog";
+	string qw12 = "Tiger";
+	
+	string qw21 = "America";
+	string qw22 = "India";
+
+	string qw31 = "Earth";
+	string qw32 = "Venus";
+};
+
+struct CorrectAnswers
+{
+	string c1 = "Elephant";
+	string c2 = "Russia";
+	string c3 = "jupiter";
+};
+
+int main()
+{
+	string input_question_1;
+	string input_question_2;
+	string input_question_3;
+	int points = 0;
+
+	cout << "\n_____Welcome to my quiz application_____" << endl;
+	Questions questions;
+	WrongAnswers wronganswers;
+	CorrectAnswers correctanswers;
+
+
+	cout << questions.q1 << endl;
+	cout << "1. " << correctanswers.c1 << endl;
+	cout << "2. " << wronganswers.qw12 << endl;
+	cout << "3. " << wronganswers.qw11 << endl;
+	cin >> input_question_1;
+
+	if (input_question_1 == correctanswers.c1)
+	{
+		cout << "Correct" << endl;
+		points++;
+		cout << "you have: " << points << "pts" << endl << endl;
+	}
+	else
+	{
+		cout << "Incorrect" << endl;
+	}
+
+	cout << questions.q2 << endl;
+	cout << "1. " << correctanswers.c2 << endl;
+	cout << "2. " << wronganswers.qw21 << endl;
+	cout << "3. " << wronganswers.qw22 << endl;
+
+	cin >> input_question_2;
+
+	if (input_question_2 == correctanswers.c2)
+	{
+		cout << "Correct" << endl;
+		points++;
+		cout << "you have: " << points << "pts" << endl << endl;
+	}
+	else
+	{
+		cout << "Incorrect" << endl;
+	}
+
+
+	cout << questions.q3 << endl;
+	cout << "1. " << wronganswers.qw31 << endl;
+	cout << "2. " << correctanswers.c3 << endl;
+	cout << "3. " << wronganswers.qw32 << endl;
+
+	cin >> input_question_3;
+
+	if (input_question_3 == correctanswers.c3)
+	{
+		cout << "Correct" << endl;
+		points++;
+		cout << "you have: " << points << "pts" << endl << endl;
+	}
+	else
+	{
+		cout << "Incorrect" << endl;
+	}
+
+	cout << endl << "__________You've completed with the quiz with "<< points <<"pts Thank you for playing__________" << endl;
+
+}
+
